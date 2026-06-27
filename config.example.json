@@ -1,0 +1,76 @@
+{
+  "Detection": {
+    "Level": "High",
+    "MinimumConfidenceThreshold": 0.7,
+    "EnableSignatureDetection": true,
+    "EnableBehavioralDetection": true,
+    "EnableMLDetection": true,
+    "EnableReputationCheck": true,
+    "YaraRulesPath": "C:\\ProgramData\\Vyron\\rules",
+    "TrustedHashes": [],
+    "TrustedProcesses": [
+      "C:\\Windows\\System32\\svchost.exe",
+      "C:\\Windows\\System32\\lsass.exe",
+      "C:\\Windows\\explorer.exe"
+    ]
+  },
+  "Monitoring": {
+    "Scope": "All",
+    "EnableProcessMonitoring": true,
+    "EnableFileMonitoring": true,
+    "EnableNetworkMonitoring": false,
+    "EnableRegistryMonitoring": false,
+    "MonitoredPaths": [
+      "C:\\Users",
+      "C:\\Program Files",
+      "C:\\Program Files (x86)",
+      "C:\\Windows\\System32"
+    ],
+    "ExcludedPaths": [
+      "C:\\Windows\\Temp",
+      "C:\\Windows\\SoftwareDistribution",
+      "C:\\Windows\\WinSxS"
+    ],
+    "HighPriorityExtensions": [
+      ".exe",
+      ".dll",
+      ".sys",
+      ".bat",
+      ".cmd",
+      ".ps1",
+      ".vbs",
+      ".js",
+      ".hta",
+      ".scr",
+      ".com",
+      ".pif"
+    ]
+  },
+  "Response": {
+    "AutoQuarantine": true,
+    "AutoTerminateProcess": true,
+    "QuarantinePath": "C:\\ProgramData\\Vyron\\Quarantine",
+    "MinimumSeverityForAutoResponse": "High",
+    "EnableEventLog": true,
+    "EnableNotifications": true
+  },
+  "Learning": {
+    "Enabled": true,
+    "StoreTrainingData": true,
+    "AutoRetrain": false,
+    "MinimumEventsForRetraining": 10000,
+    "TrainingDataRetentionDays": 90
+  },
+  "Storage": {
+    "DataPath": "C:\\ProgramData\\Vyron\\Data",
+    "LogPath": "C:\\ProgramData\\Vyron\\Logs",
+    "DatabasePath": "C:\\ProgramData\\Vyron\\Data\\vyron.db",
+    "MaxLogFileSizeMB": 100,
+    "LogRetentionDays": 30
+  },
+  "Updates": {
+    "AutoUpdate": false,
+    "UpdateIntervalSeconds": 3600,
+    "UpdateServerUrl": "https://updates.vyron.local"
+  }
+}
